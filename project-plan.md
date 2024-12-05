@@ -1,19 +1,19 @@
 # Csapatnév: Villámsündisznók
 
 ## Projekt rövid bemutatása:
-###** A projekt neve
+### A projekt neve
 
-###** Cél:
+### Cél:
 A projekt célja az alapvető programozási fogalmak és technikák alkalmazásának bemutatása (például: változók, ciklusok, feltételek, függvények).
-###** Fejlesztési környezet:
+### Fejlesztési környezet:
 Python 3.12
 IDE: Visual Studio Code
 Használt könyvtárak: math, random, os
 
-##** Program rövid bemutatása:
-##Cél:
+## Program rövid bemutatása:
+## Cél:
 
-##Felhasználói felület: 
+## Felhasználói felület: 
 Egyszerű terminál alapú megoldás, amely megjeleníti a játék állapotát és kommunikál a játékosokkal.
 - név bekéréssel kezdjük
 - print (Üdv, xy! )

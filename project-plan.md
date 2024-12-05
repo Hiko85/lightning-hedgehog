@@ -1,7 +1,7 @@
 # Csapatnév: Villámsündisznók
 
 ## Projekt rövid bemutatása:
-### A projekt neve
+### A projekt neve:
 
 ### Cél:
 A projekt célja az alapvető programozási fogalmak és technikák alkalmazásának bemutatása (például: változók, ciklusok, feltételek, függvények).

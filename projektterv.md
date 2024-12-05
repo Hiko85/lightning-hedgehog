@@ -1,31 +1,31 @@
-#IKT Projektmunka Dokumentáció
+# IKT Projektmunka Dokumentáció
 ________________________________________
-##Projekt címe: Python Játékok
+## Projekt címe: Python Játékok
 Mini játékgyűjtemény Pythonban
 Készítette: Orosz Adrienn, Oszlánszki Ildikó, Márkovits Marcella
 ________________________________________
-##1. A program célja
+## 1. A program célja
 A projekt célja három különböző típusú játék kifejlesztése Python nyelven, amelyek egy közös főmenüből érhetők el. A program fejlesztése során a tanult algoritmusokat és programozási módszereket alkalmaztuk, különös figyelmet fordítva a moduláris kódstruktúrára, az olvashatóságra, valamint a felhasználói élményre.
 A három játék:
 1.	Hörcsög Tamagotchi: A játékos feladata, hogy gondoskodjon egy hörcsögről, különösen a megfelelő hidratálásáról.
 2.	Kalandjáték: Egy történetvezérelt játék, amelyben a játékos kiválaszthatja szerepét (nyomozó vagy gyilkos), és döntésein keresztül haladhat előre a történetben.
 3.	Amőba: Klasszikus kétjátékos stratégiai játék, amelyben cél a három jel egymás melletti elhelyezése (sorban, oszlopban vagy átlósan).
 ________________________________________
-##2. Felhasználói útmutató
-###1.	Program elindítása:
+## 2. Felhasználói útmutató
+### 1.	Program elindítása:
 A program futtatásához a jatekok.py fájlt kell elindítani.
-###2.	Főmenü:
+### 2.	Főmenü:
 A program indításakor megjelenik egy főmenü, amelyben a következő lehetőségek közül választhat:
 o	1: Hörcsög Tamagotchi
 o	2: Kalandjáték
 o	3: Amőba
 o	0: Kilépés
-###3.	Játékok elérése:
+### 3.	Játékok elérése:
 A választás után a megfelelő játék elindul, ahol a felhasználó a megjelenő utasításokat követve haladhat előre.
 ###4.	Kilépés:
 A játékok befejezése után a játékos visszatérhet a főmenübe, vagy megnyomhatja az Enter-t a teljes programból való kilépéshez.
 ________________________________________
-##3. Modulok
+## 3. Modulok
 A program több modulból áll, mindegyik modul külön fájlban található. A modulok célja a funkcionalitás és a játéklogika elkülönítése.
 jatekok.py:
 Ez a főfájl, amely a főmenüt és az alapvető vezérlési logikát tartalmazza. Meghívja a megfelelő modulokat az egyes játékok futtatására.
@@ -59,7 +59,7 @@ o	Az Amőba játéktábla állapotának nyomon követésére.
 •	Eljárások, függvények:
 o	A logika strukturált megvalósítására.
 ________________________________________
-##4. A játék működési folyamata
+## 4. A játék működési folyamata
 1.	Főmenü:
 A felhasználó beír egy számot a kívánt opció kiválasztásához.
 2.	Játék indítása:
@@ -69,7 +69,7 @@ A játékokban gyűjtött pontok vagy az aktuális nyertes megjelenik a játék 
 4.	Kilépés:
 A játék végén a felhasználónak lehetősége van a programból való kilépésre.
 ________________________________________
-##5. Telepítési és futtatási lépések
+## 5. Telepítési és futtatási lépések
 1.	Python telepítése:
 A program futtatásához Python 3.8 vagy újabb verzió szükséges.
 2.	Fájlok letöltése:
@@ -80,17 +80,17 @@ bash
 Kód másolása
 python main.py
 ________________________________________
-##6. Fejlesztési folyamat
+## 6. Fejlesztési folyamat
 A csapat minden tagja külön-külön fejlesztett egy játékot. A közös munkát GitHub használatával koordináltuk, a változásokat commitok formájában dokumentáltuk.
 ________________________________________
-##7. Továbbfejlesztési lehetőségek
+## 7. Továbbfejlesztési lehetőségek
 1.	Online multiplayer mód hozzáadása az Amőbához.
 2.	A Kalandjáték történetének kibővítése többféle végkifejlettel.
 3.	Grafikus felhasználói felület (GUI) megvalósítása.
 ________________________________________
 
 
-##A struktúra
+## A struktúra
 1.	jatekok.py: Ez a főfájl, amely a főmenüt és az alapvető vezérlési logikát tartalmazza.
 2.	A *_felhasznalo.py felelős a felhasználói interakciókért.
 o	Meghívja a megfelelő *_logika.py fájlokat.

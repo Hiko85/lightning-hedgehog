@@ -27,25 +27,25 @@ A játékok befejezése után a játékos visszatérhet a főmenübe, vagy megny
 ________________________________________
 ## 3. Modulok
 A program több modulból áll, mindegyik modul külön fájlban található. A modulok célja a funkcionalitás és a játéklogika elkülönítése.
-jatekok.py:
+- jatekok.py:
 Ez a főfájl, amely a főmenüt és az alapvető vezérlési logikát tartalmazza. Meghívja a megfelelő modulokat az egyes játékok futtatására.
-hörcsög_felhasznalo.py:
+- hörcsög_felhasznalo.py:
 Bekéri a játékostól, hogy mit szeretne adni a hörcsögnek.
-hörcsög_logika.py:
+- hörcsög_logika.py:
 A Hörcsög játékkal kapcsolatos logikát tartalmazza. Ez a modul kezeli a játék logikai folyamatát, és a hörcsög_jatek_allapot.py modulban tárolt állapotokat frissíti.
-hörcsög_jatek_allapot.py:
+- hörcsög_jatek_allapot.py:
 A Hörcsög aktuális állapotát adja vissza. 
-kaland_felhasznalo.py:
+- kaland_felhasznalo.py:
 Bekéri a játékostól a választásait.
-kaland_logika.py:
+- kaland_logika.py:
 A kalandjáték logikáját kezeli, és az állapotot kaland_jatek_allapot.py fájlban frissíti. A nyomozónak és a gyilkosnak kiosztja, hogy kapott-e vagy veszített pontot.
-kaland_jatek_allapot.py:
+- kaland_jatek_allapot.py:
 A nyomozó és a gyilkos állapota. A kalandjáték változóit tartalmazza.
-amőba_felhasznalo.py:
+- amőba_felhasznalo.py:
 Bekéri az aktuális játékostól a következő lépést.
-amőba_logika.py:
+- amőba_logika.py:
 Az Amőba játék szabályait és logikáját kezeli. Ellenőrzi, hogy nyert-e valamelyik játékos és hogy tele van-e a tábla. 
-amőba_jatek_allapot.py:
+- amőba_jatek_allapot.py:
 Ez a modul a játék állapotát kezeli, például a tábla megjelenítése. Az Amőba mezőinek állapotát tárolja.
 
 Funkció

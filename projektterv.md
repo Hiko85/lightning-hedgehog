@@ -16,10 +16,10 @@ ________________________________________
 A program futtatásához a jatekok.py fájlt kell elindítani.
 ### 2.	Főmenü:
 A program indításakor megjelenik egy főmenü, amelyben a következő lehetőségek közül választhat:
-o	1: Hörcsög Tamagotchi
-o	2: Kalandjáték
-o	3: Amőba
-o	0: Kilépés
+- 1: Hörcsög Tamagotchi
+- 2: Kalandjáték
+- 3: Amőba
+- 0: Kilépés
 ### 3.	Játékok elérése:
 A választás után a megfelelő játék elindul, ahol a felhasználó a megjelenő utasításokat követve haladhat előre.
 ###4.	Kilépés:
@@ -50,14 +50,14 @@ Ez a modul a játék állapotát kezeli, például a tábla megjelenítése. Az 
 
 Funkció
      Hörcsög, Amőba, Kaland:
-•	Ciklusok:
-o	while a menüstruktúrában és a játékok folyamatos futtatásához.
-•	Feltételes utasítások:
-o	if-elif-else a felhasználói döntések kezeléséhez.
-•	Listák:
-o	Az Amőba játéktábla állapotának nyomon követésére.
-•	Eljárások, függvények:
-o	A logika strukturált megvalósítására.
+- Ciklusok:
+     - while a menüstruktúrában és a játékok folyamatos futtatásához.
+- Feltételes utasítások:
+     - if-elif-else a felhasználói döntések kezeléséhez.
+- Listák:
+     - Az Amőba játéktábla állapotának nyomon követésére.
+- Eljárások, függvények:
+     - A logika strukturált megvalósítására.
 ________________________________________
 ## 4. A játék működési folyamata
 1.	Főmenü:
@@ -77,7 +77,6 @@ A projekt összes fájlja letölthető a GitHub-tárhelyről.
 3.	Futtatás:
 Navigáljon a projekt könyvtárába, és futtassa a következő parancsot:
 bash
-Kód másolása
 python main.py
 ________________________________________
 ## 6. Fejlesztési folyamat
@@ -93,11 +92,11 @@ ________________________________________
 ## A struktúra
 1.	jatekok.py: Ez a főfájl, amely a főmenüt és az alapvető vezérlési logikát tartalmazza.
 2.	A *_felhasznalo.py felelős a felhasználói interakciókért.
-o	Meghívja a megfelelő *_logika.py fájlokat.
+- Meghívja a megfelelő *_logika.py fájlokat.
 3.	A *_logika.py modulok a játékmenetet irányítják.
-o	Az állapotot módosítják a hozzájuk tartozó *_allapot.py modulban.
+- Az állapotot módosítják a hozzájuk tartozó *_allapot.py modulban.
 4.	A *_allapot.py modulok tárolják az aktuális játék változóit.
-o	Ez biztosítja, hogy minden állapot jól elkülönített legyen.
+- Ez biztosítja, hogy minden állapot jól elkülönített legyen.
 
 Felhasználói felület modul: Ez a *_felhasznalo.py, amely kezeli a játékos interakcióit és a játékok közötti navigációt. Itt történik a menü és a játékos döntéseinek megjelenítése.
 Játék logika modul: Ez tartalmazza a játékmenet működését (szabályok, döntések, események). Minden játéknak külön fájlban kell lennie, például: hörcsög_logika.py, kaland_logika.py, amőba_logika.py.

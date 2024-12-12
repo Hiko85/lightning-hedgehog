@@ -10,7 +10,7 @@ def main_menu():
     while choice != "4":
         print("\nÜdvözlünk a játékban! Válassz az alábbi opciók közül:")
         print("1. Hörcsög Tamagotchi (hidratálás)")
-        print("2. Kalandjáték (nyomozó vagy gyilkos)")
+        print("2. Nyomozós játék")
         print("3. Amőba játék")
         print("4. Kilépés")
 
@@ -20,7 +20,7 @@ def main_menu():
             print("\nHörcsög Tamagotchi indítása...\n")
             start_hamster_tamagotchi()
         elif choice == "2":
-            print("\nKalandjáték indítása...\n")
+            print("\nNyomozós játék indítása...\n")
             start_detective_game()
         elif choice == "3":
             print("\nAmőba játék indítása...\n")
@@ -35,7 +35,7 @@ def start_hamster_tamagotchi():
     hamster
 
 def start_detective_game():
-    print("Hamarosan érkezik a Kalandjáték!")
+    print("Hamarosan érkezik a Nyomozós játék!")
     detective
    
 def start_tic_tac_toe():

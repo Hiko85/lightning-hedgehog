@@ -72,7 +72,7 @@ def hamster_drink():
     hamster_thirst = 7  # Kezdetben közepes szomjúsággal
     hydration_level = 5  # Kezdje közepes hidratáltsággal
 
-    while hamster_thirst < 10:  # Amíg nem lesz teljesen hidratált
+    while hydration_level < 10:  # Amíg nem lesz teljesen hidratált
         answer = input("Válaszd A, B vagy C: ")
 
         if answer.lower() == "a":
@@ -99,7 +99,7 @@ def hamster_drink():
         else:
             print("Érvénytelen válasz, próbáld újra!")
             
-        if hamster_thirst >= 10:
+        if hydration_level >= 10:  # Ha már jól hidratált
             print(f"\n{hamster_name} már jól hidratált, köszöni szépen!")
             print(f"{hamster_name} összes hidratáltsága: {hydration_level}\nEgészségi állapota tízes skálán: {health_meter}")
             break  # Kilépünk a ciklusból, ha a hörcsög már hidratált

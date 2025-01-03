@@ -132,7 +132,8 @@ def hamster_play():
             break  # Ha válaszolt, kilépünk a ciklusból
 
         else:
-            print("Érvénytelen választás, próbáld újra!")
+            print("Érvénytelen választás, próbáld újra!")  # Ha érvénytelen válasz érkezik, újra kérdez
+
 
 # Fáradtság kezelése
 def hamster_sleep():

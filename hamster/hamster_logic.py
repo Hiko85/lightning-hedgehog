@@ -48,7 +48,10 @@ def hamster_food():
 
         else:
             print("Érvénytelen válasz, próbáld újra!")
-            continue
+
+        while hamster_fullness < 10 and answer.lower() not in ["a", "b"]:
+            print("Kérlek, válassz A vagy B közül!")
+            answer = input("Válassz, A vagy B: ")
         
         # Ha a hörcsög jól lakott, megállunk
         if hamster_fullness >= 10:
@@ -67,43 +70,52 @@ def hamster_drink():
     print(f"\n{hamster_name}, a hörcsögöd szomjas! Mit adsz neki inni?")
     print("A) Víz")
     print("B) Üdítő")
+    print("C) Tea")
 
-    hamster_thirst = 0
+    hamster_thirst = 10  # Kezdetben szomjas a hörcsög
     hydration_level = 5  # Kezdje viszonylag jó hidratáltsággal
     health_meter = 10  # Kezdje viszonylag jó egészségi állapotban
 
-    while hamster_thirst < 10:
-        answer = input("Válassz, A vagy B: ")
-        
+    while hamster_thirst > 0:  # Amíg nem lesz teljesen hidratált
+        answer = input("Válaszd A, B vagy C: ")
+
         if answer.lower() == "a":
             print(f"{hamster_name} nagyon örül a friss víznek! Jól választottál.")
-            hamster_thirst += 2
+            hamster_thirst -= 5  # Víz csökkenti a szomjúságot
             hydration_level += 3  # Víz növeli a hidratáltságot
             health_meter += 2
             print(f"{hamster_name} eddigi hidratáltsági szintje: {hydration_level}\nSzomjúsága tizes skálán: {hamster_thirst}\nEgészségi állapota százas skálán: {health_meter}")
-            
+
         elif answer.lower() == "b":
             print(f"{hamster_name} szívesen iszik egy kis üdítőt, de nem túl hidratáló!")
-            hamster_thirst += 5
+            hamster_thirst -= 2  # Üdítő csökkenti a szomjúságot
             hydration_level += 1  # Üdítő nem segít sokat a hidratáltságon
-            health_meter -= 4
+            health_meter -= 4  # Az üdítő rontja az egészségi állapotot
+            print(f"{hamster_name} eddigi hidratáltsági szintje: {hydration_level}\nSzomjúsága tizes skálán: {hamster_thirst}\nEgészségi állapota százas skálán: {health_meter}")
+
+        elif answer.lower() == "c":
+            print(f"{hamster_name} szívesen iszik teát, de az sem a legjobb választás!")
+            hamster_thirst -= 3  # Tea csökkenti a szomjúságot
+            hydration_level += 2  # Tea is segít, de nem annyira, mint a víz
+            health_meter -= 2  # Tea is rontja az egészségi állapotot
             print(f"{hamster_name} eddigi hidratáltsági szintje: {hydration_level}\nSzomjúsága tizes skálán: {hamster_thirst}\nEgészségi állapota százas skálán: {health_meter}")
 
         else:
             print("Érvénytelen válasz, próbáld újra!")
-        
-        # Ha a hörcsög jól itta, megállunk
-        if hamster_thirst >= 10:
+            
+        # Ha a hörcsög jól hidratált, megállunk
+        if hamster_thirst <= 0:
             print(f"\n{hamster_name} már jól hidratált, köszöni szépen!")
             print(f"{hamster_name} összes hidratáltsága: {hydration_level}\nEgészségi állapota százas skálán: {health_meter}")
-            break
+            break  # Kilépünk a ciklusból, ha a hörcsög már hidratált
 
         # Ha az egészségi állapot túl alacsony, vízre van szüksége
-        if health_meter < 10:
+        if health_meter < 5:  # Ha az egészségi állapot túl alacsony, vizet kell adni
             print(f"{hamster_name} nincs valami jó formában, adj neki vizet!")
 
 
-# # Játék
+# Játék
+# def hamster_play():
 #     print("\nMost a hörcsögöd szeretne játszani. Mit teszel?")
 #     print("A) Engedem, hogy a labdáján guruljon.")
 #     print("B) Tedd vissza a kalitkába pihenni.")

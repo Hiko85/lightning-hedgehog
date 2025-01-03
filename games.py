@@ -9,7 +9,7 @@ def main_menu():
     
     while choice != "4":
         print("\nÜdvözlünk a játékban! Válassz az alábbi opciók közül:")
-        print("1. Hörcsög Tamagotchi (hidratálás)")
+        print("1. Hörcsög Tamagotchi")
         print("2. Nyomozós játék")
         print("3. Amőba játék")
         print("4. Kilépés")

@@ -39,4 +39,39 @@ def hamster_food():
         else:
             print("Érvénytelen válasz, próbáld újra!")
 
+# Második döntés: Játék
+    print("\nMost a hörcsögöd szeretne játszani. Mit teszel?")
+    print("A) Engedem, hogy a labdáján guruljon.")
+    print("B) Tedd vissza a kalitkába pihenni.")
+    valasz = input("Válaszd A vagy B: ")
+
+    if valasz.lower() == "a":
+        print("A hörcsögöd imádja a játékot és nagyon boldog!")
+    elif valasz.lower() == "b":
+        print("A hörcsögöd pihenhet, de egy kicsit unatkozik.")
+    else:
+        print("Érvénytelen válasz, próbáld újra!")
+        return
+
+# Harmadik döntés: Alvás
+    print("\nA hörcsögöd fáradt. Mit csinálsz?")
+    print("A) Tedd a fészkébe, hogy pihenhessen.")
+    print("B) Hadd maradjon kint egy kicsit.")
+    valasz = input("Válaszd A vagy B: ")
+
+    if valasz.lower() == "a":
+        print("A hörcsögöd kipiheni magát, és boldog, hogy kényelmesen alhatott.")
+    elif valasz.lower() == "b":
+        print("A hörcsögöd nem tud aludni, és kicsit fáradtabb lesz.")
+    else:
+        print("Érvénytelen válasz, próbáld újra!")
+        return
+
+    # Játék vége
+    print("\nA játék véget ért! Gratulálok, sikeresen gondoskodtál a hörcsögödről!")
+    print("Köszönöm, hogy játszottál!")
+
+# Játék elindítása
+# jatek()
+
 

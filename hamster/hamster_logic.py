@@ -27,29 +27,45 @@ def hamster_food():
 
     hamster_fullness = 0
     cal_counter = 0
-    health_meter = 0
+    health_meter = 10  # Kezdje viszonylag jó egészségi állapotban
 
-    while hamster_fullness < 10 :
+    while hamster_fullness < 10:
         answer = input("Válassz, A vagy B: ")
+        
         if answer.lower() == "a":
             print(f"{hamster_name} nagyon örül a friss zöldségeknek! Jól választottál.")
-            hamster_fullness += 1
+            hamster_fullness += 2
             cal_counter += 2
             health_meter += 4
             print(f"{hamster_name} eddig ennyi kalóriát fogyasztott: {cal_counter}")
-            print(f"{hamster_name} egészségi állapotia tízes skálán: {health_meter}")
+            print(f"{hamster_name} jóllakottsága százas skálán: {hamster_fullness}")
+            print(f"{hamster_name} egészségi állapota százas skálán: {health_meter}")
+            
         elif answer.lower() == "b":
             print(f"{hamster_name} nem igazán szereti a csipszet, de nem bánja annyira.")
-            hamster_fullness += 2
+            hamster_fullness += 5
             cal_counter += 10
             health_meter -= 3
             print(f"{hamster_name} eddig ennyi kalóriát fogyasztott: {cal_counter}")
-            print(f"{hamster_name} egészségi állapotia tízes skálán: {health_meter}")
+            print(f"{hamster_name} jóllakottsága százas skálán: {hamster_fullness}")
+            print(f"{hamster_name} egészségi állapota százas skálán: {health_meter}")
+
         else:
             print("Érvénytelen válasz, próbáld újra!")
+            continue
+        
+        # Ha a hörcsög jól lakott, megállunk
+        if hamster_fullness >= 10:
+            print(f"\n{hamster_name} jól lakott, köszöni szépen!")
+            print(f"{hamster_name} ennyi kalóriát fogyasztott összesen: {cal_counter}")
+            print(f"{hamster_name} egészségi állapota százas skálán: {health_meter}")
+            break
 
-    if hamster_fullness == 10 :
-            print(f"{hamster_name} jól lakott, köszöni szépen!")
+        # Ha az egészségi állapot túl alacsony, zöldséget adunk neki
+        if health_meter < 10:
+            print(f"{hamster_name} nincs valami jó formában, adj neki zöldséget!")
+
+
 
 # Itatás
 # def hamster_food():

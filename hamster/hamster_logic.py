@@ -12,3 +12,16 @@ def hamster_name():
         print(f"{hamster_name} egy utánozhatatlan Campbell törpe orosz!")
     elif hamster_type == 3 :
         print(f"{hamster_name} egy felejthetetlen Szíriai (arany) hörcsög!")
+
+def hamster_food():
+    print("\nA hörcsögöd éhes! Mit adsz neki enni?")
+    print("A) Zöldségeket")
+    print("B) Csipszet")
+    answer = input("Válaszd A vagy B: ")
+
+    if answer.lower() == "a":
+        print("A hörcsögöd nagyon örül a friss zöldségeknek! Jól választottál.")
+    elif answer.lower() == "b":
+        print("A hörcsögöd nem igazán szereti a csipszet, de nem bánja annyira.")
+    else:
+        print("Érvénytelen válasz, próbáld újra!")

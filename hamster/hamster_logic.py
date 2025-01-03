@@ -144,8 +144,20 @@ def hamster_sleep():
     hamster_energy = 5  # Kezdjük közepes energiaszinttel
 
     while hamster_energy < 10:  # Amíg nincs maximális energia
-        hamster_energy += 2  # Minden pihenéssel nő az energiaszint
-        health_meter += 1  # Pihenés javítja az egészségi állapotot
-        print(f"{hamster_name} feltöltődött! Energiaszintje most: {hamster_energy}/10\nEgészségi állapota tízes skálán: {health_meter}")
+        print(f"{hamster_name} energiaszintje: {hamster_energy}/10")
+        valasz = input("Szeretnéd, hogy folytassa a pihenést? (Igen/Nem): ")
 
-    print(f"{hamster_name} most már tele van energiával! Készen áll a következő kihívásra!")
+        if valasz.lower() in ["igen", "i"]:  # Elfogadja az "igen" és "i" válaszokat
+            hamster_energy += 2  # Minden pihenéssel nő az energiaszint
+            health_meter += 1  # Pihenés javítja az egészségi állapotot
+            print(f"{hamster_name} pihen, és energiaszintje most: {hamster_energy}/10\nEgészségi állapota tízes skálán: {health_meter}")
+        
+        elif valasz.lower() in ["nem", "n"]:  # Elfogadja a "nem" és "n" válaszokat
+            print(f"{hamster_name} úgy döntött, hogy befejezi a pihenést.")
+            break  # Kilépünk a ciklusból, ha a felhasználó nem szeretné folytatni
+
+        else:
+            print("Érvénytelen választás, próbáld újra!")  # Ha érvénytelen válasz érkezik, újra kérdez
+
+    if hamster_energy >= 10:
+        print(f"{hamster_name} most már tele van energiával! Készen áll a következő kihívásra!")

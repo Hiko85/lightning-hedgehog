@@ -115,19 +115,61 @@ def hamster_drink():
 
 
 # Játék
-# def hamster_play():
-#     print("\nMost a hörcsögöd szeretne játszani. Mit teszel?")
-#     print("A) Engedem, hogy a labdáján guruljon.")
-#     print("B) Tedd vissza a kalitkába pihenni.")
-#     valasz = input("Válaszd A vagy B: ")
+def hamster_play():
+    global hamster_name
+    print(f"\n{hamster_name} szeretne játszani! Mit teszel?")
+    print("A) Engedem, hogy a labdáján guruljon.")
+    print("B) Tedd vissza a kalitkába pihenni.")
+    
+    hamster_mood = 5  # Kezdjük közepes hangulattal (1-10 skálán)
 
-#     if valasz.lower() == "a":
-#         print("A hörcsögöd imádja a játékot és nagyon boldog!")
-#     elif valasz.lower() == "b":
-#         print("A hörcsögöd pihenhet, de egy kicsit unatkozik.")
-#     else:
-#         print("Érvénytelen válasz, próbáld újra!")
-#         return
+    while True:  # Ciklus, hogy csak érvényes válasz után lépjen tovább
+        valasz = input("Válaszd A vagy B: ")
+
+        if valasz.lower() == "a":
+            hamster_mood += 2  # Ha játszik, a hangulat növekszik
+            print(f"{hamster_name} imádja a játékot és nagyon boldog! Hangulata most: {hamster_mood}/10")
+            break  # Ha válaszolt, kilépünk a ciklusból
+
+        elif valasz.lower() == "b":
+            hamster_mood -= 1  # Ha pihen, a hangulat kissé csökken
+            print(f"{hamster_name} pihenhet, de egy kicsit unatkozik. Hangulata most: {hamster_mood}/10")
+            break  # Ha válaszolt, kilépünk a ciklusból
+
+        else:
+            print("Érvénytelen válasz, próbáld újra!")  # Ha érvénytelen választ adunk, újra kérdez
+
+    # A hangulat értéke alapján különböző reakciók:
+    if hamster_mood >= 8:
+        print(f"{hamster_name} most igazán boldog és energikus!")
+    elif hamster_mood >= 5:
+        print(f"{hamster_name} elég jól van, de egy kis mókára vágyik.")
+
+        # Ha a hörcsög jól van, folytathatjuk a játékot
+        print(f"\nMiután {hamster_name} jól van, most még egy újabb lehetőséget adunk neki!")
+
+        # Új lehetőség, ha a hörcsög továbbra is jól van
+        print("A) Vidd el sétálni a parkba.")
+        print("B) Adj neki egy kis finomságot.")
+        
+        while True:
+            valasz = input("Válaszd A vagy B: ")
+
+            if valasz.lower() == "a":
+                print(f"{hamster_name} nagyon élvezi a parkban tett sétát!")
+                break  # Kilépünk a ciklusból, ha válaszolt
+
+            elif valasz.lower() == "b":
+                print(f"{hamster_name} imádja a finomságokat, boldog lesz tőle!")
+                break  # Kilépünk a ciklusból, ha válaszolt
+
+            else:
+                print("Érvénytelen válasz, próbáld újra!")  # Ha érvénytelen választ adunk, újra kérdez
+
+    else:
+        print(f"{hamster_name} kicsit lehangolt, talán egy kis játék segíthet neki.")
+
+
 
 # # Alvás
 #     print("\nA hörcsögöd fáradt. Mit csinálsz?")

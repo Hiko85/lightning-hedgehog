@@ -1,7 +1,7 @@
 def detective_story(state):
 #A nyomozó történetet kezeli.
     
-    print("Öt év telt el azóta, hogy Ront meggyanúsították a gyilkossággal és kicsapták a nyomozó akadémiáról. Nyomozóként korábban már többször kérted Ron segítségét," 
+    print("\nÖt év telt el azóta, hogy Ront meggyanúsították a gyilkossággal és kicsapták a nyomozó akadémiáról. Nyomozóként korábban már többször kérted Ron segítségét," 
           "aki így titokban mégis nyomozhat, ám most Ron meghívót kapott Milo Moriarty-tól egy hajóútra. Felfedi, hogy az akadémia tanárai közül is részt vesznek az úton"
           " páran, köztük az is, aki annak idején besározta Ront. Mit tesztek?")
     print("1. Elfogadjátok a meghívást és elmentek a hajóútra.")
@@ -16,20 +16,20 @@ def detective_story(state):
               " juthattak, ami az igazi gyilkos nyomára vezethet. Elmentek a bárba, ahol az egyik vendég éjfélkor hirtelen életét veszti. Dr. Hirsch, aki szintén az akadémia"
                " tanára, ugyancsak a bárban van, és megtiltja, hogy bárki is elhagyja a bárt. Mit tesztek?")
         print("1. Megvizsgáljátok a holttestet.")
-        print("2. Kikérdezitek a jelenlévőket.\n")
+        print("2. Kikérdezitek a jelenlévőket.")
         print("Jelenlegi pontszámod:", state.get_score())
         return bar_murder(state)
     elif choice == "2":
         state.update_score(0)
         print("\nA választásod alapján sosem tudjátok meg ki az igazi gyilkos. A nyomozás sikertelen volt. Elbuktál.")
         print("Az elért pontszámod:", state.get_score())
-        return retry_or_exit(state)
+        return retry_or_exit_detective(state)
     else:
         print("Érvénytelen választás. Kérlek, próbáld újra.")
         detective_story(choice)
 
 
-def retry_or_exit(state):
+def retry_or_exit_detective(state):
     print("1. Újrapróbálod a játékot nyomozóként?")
     print("2. Kipróbálod a gyilkos történetét?")
     print("3. Kilépés a játékból.")
@@ -45,7 +45,7 @@ def retry_or_exit(state):
         print("Köszönjük, hogy játszottál! Viszlát!")
     else:
         print("Érvénytelen választás. Kérlek, próbáld újra.")
-        retry_or_exit(state)
+        retry_or_exit_detective(state)
 
 def bar_murder(state):
     choice = input("Választásod: ").strip()
@@ -55,7 +55,7 @@ def bar_murder(state):
         print("\nAz orvos egyszerűen közli, hogy méreg végzett az áldozattal. Ráadásul a bort az áldozat feleségének kérésére hozták, ám a pincér szerint egy férfi hang"
               " adta le korábban a rendelést. Eközben Milo felhívja Ront, akitől megtudjátok, hogy a gyilkosságot az követte el, aki után Ron is nyomoz, vagyis "
               "a Moriarty család informátora, és ahhoz, hogy megállítsák, Ronnak meg kell ölnie. Hogyan tovább?")
-        print("\n1. Megtagadjátok Milo parancsát, nem akarjátok megölni az informátort.")
+        print("1. Megtagadjátok Milo parancsát, nem akarjátok megölni az informátort.")
         print("2. Tovább nyomoztok, hogy megtudjátok, ki az informátor.")
         print("Jelenlegi pontszámod:", state.get_score())
         return questioning_examining(state)
@@ -64,7 +64,7 @@ def bar_murder(state):
         print("\nAz orvos egyszerűen közli, hogy méreg végzett az áldozattal. Ráadásul a bort az áldozat feleségének kérésére hozták, ám a pincér szerint egy férfi hang"
               " adta le korábban a rendelést. Eközben Milo felhívja Ront, akitől megtudjátok, hogy a gyilkosságot az követte el, aki után Ron is nyomoz, vagyis "
               "a Moriarty család informátora, és ahhoz, hogy megállítsák, Ronnak meg kell ölnie. Hogyan tovább?")
-        print("\n1. Megtagadjátok Milo parancsát, nem akarjátok megölni az informátort.")
+        print("1. Megtagadjátok Milo parancsát, nem akarjátok megölni az informátort.")
         print("2. Tovább nyomoztok, hogy megtudjátok, ki az informátor.")
         print("Jelenlegi pontszámod:", state.get_score())
         return questioning_examining(state)
@@ -79,7 +79,7 @@ def questioning_examining(state):
         state.update_score(0)
         print("\nMegtagadtátok Milo parancsát, a gyilkosságok tovább folytatódnak. Nem kaptátok el a gyilkost. Vesztettetek. A játék véget ért.")
         print("Az elért pontszámod:", state.get_score())
-        return retry_or_exit(state)
+        return retry_or_exit_detective(state)
     elif choice == "2":
         state.update_score(10)
         print("\nAz ebédlőben összefutottatok Fin tanárnőnel és Shachival, az asszisztensével. Ron a tanárnőt kérdezi az öt évvel ezelőtti gyilkosságról."
@@ -137,7 +137,7 @@ def falling_body(state):
         state.update_score(0)
         print("\nFeladtátok. A játék véget ért.")
         print("Az elért pontszámod:", state.get_score())
-        return retry_or_exit(state)
+        return retry_or_exit_detective(state)
     else:
         print("Érvénytelen választás. Kérlek, próbáld újra.")
         detective_story(choice)
@@ -183,7 +183,7 @@ def separate(state):
         state.update_score(0)
         print("\nElbuktatok. Nem jöttetek rá, hogy mit jelentett igazából a kód, újabb áldozatok haltak meg. A játék véget ért.")
         print("Az elért pontszámod:", state.get_score())
-        return retry_or_exit(state)
+        return retry_or_exit_detective(state)
     else:
         print("Érvénytelen választás. Kérlek, próbáld újra.")
         detective_story(choice)
@@ -203,7 +203,7 @@ def oppose(state):
         state.update_score(0)
         print("\nElbuktatok. Nem jöttetek rá, hogy mit jelentett igazából a kód, újabb áldozatok haltak meg. A játék véget ért.")
         print("Az elért pontszámod:", state.get_score())
-        return retry_or_exit(state)
+        return retry_or_exit_detective(state)
     else:
         print("Érvénytelen választás. Kérlek, próbáld újra.")
         detective_story(choice)
@@ -233,7 +233,7 @@ def pool(state):
         state.update_score(0)
         print("\nElbuktatok. Megmenthettétek volna az áldozatokat, de hagytátok őket meghalni. A játék véget ért.")
         print("Az elért pontszámod:", state.get_score())
-        return retry_or_exit(state)
+        return retry_or_exit_detective(state)
     else:
         print("Érvénytelen választás. Kérlek, próbáld újra.")
         detective_story(state)
@@ -264,7 +264,7 @@ def catch_culprit(state):
 def killer_story(state):
     # A gyilkos történetet kezeli.
 
-    print("Öt év telt el azóta, hogy Ront meggyanúsították a gyilkossággal és kicsapták a nyomozó akadémiáról. Te voltál, aki akkor rákented a gyilkosságot, mint a Moriarty-család informátora hiszen az akadémia diákjaként könnyen ráterhelhetted a gyanút."
+    print("\nÖt év telt el azóta, hogy Ront meggyanúsították a gyilkossággal és kicsapták a nyomozó akadémiáról. Te voltál, aki akkor rákented a gyilkosságot, mint a Moriarty-család informátora hiszen az akadémia diákjaként könnyen ráterhelhetted a gyanút."
           "Most az a feladatod, hogy a hajóúton Milo parancsára gyilkosságokat hajts végre, de ne hagyd, hogy Ron és a társa leleplezzenek téged."
           "A hajón már indulás előtt összefutsz Ronnal és a társával. Mit teszel?")
     print("1. Úgy teszel, mintha nem ismernéd őket.")
@@ -292,9 +292,9 @@ def killer_story(state):
         killer_story(choice)
 
 
-def retry_or_exit(state):
-    print("1. Újrapróbálod a játékot nyomozóként?")
-    print("2. Kipróbálod a gyilkos történetét?")
+def retry_or_exit_killer(state):
+    print("1. Kipróbálod a nyomozó történetét?")
+    print("2. Újrapróbálod a játékot gyilkosként?")
     print("3. Kilépés a játékból.")
     choice = input("Választásod: ").strip()
 
@@ -308,7 +308,7 @@ def retry_or_exit(state):
         print("Köszönjük, hogy játszottál! Viszlát!")
     else:
         print("Érvénytelen választás. Kérlek, próbáld újra.")
-        retry_or_exit(state)
+        retry_or_exit_killer(state)
 
 
 def first_meeting(state):
@@ -316,8 +316,7 @@ def first_meeting(state):
 
     if choice == "1":
         state.update_score(10)
-        print(
-            "\nA beszélgetés közben a pincértől elvesztek egy-egy pezsgős poharat, majd felhozod az öt évvel ezelőtt gyilkossági ügyet:")
+        print("\nA beszélgetés közben a pincértől elvesztek egy-egy pezsgős poharat, majd felhozod az öt évvel ezelőtt gyilkossági ügyet:")
         print("1. Váltig állítod, hogy Ron gyilkos és nem érted, hogy mászkálhat szabadon, így persze vitatkozni kezdtek.")
         print("2. Próbálsz Ron kedvére tenni, így úgy teszel, mintha aki nagyon sajnálja, hogy anno igazságtalanul vádolták meg a gyilkossággal.")
         print("Jelenlegi pontszámod:", state.get_score())
@@ -325,7 +324,7 @@ def first_meeting(state):
     elif choice == "2":
         state.update_score(5)
         print("\nOtthagyod a professzort és Ronékat és inkább körülnézel a hajón. Észreveszel egy házaspárt. Hogyan tovább?")
-        print("\n1. Utánuk lopódzol és kihallgatod őket, mik a terveik.")
+        print("1. Utánuk lopódzol és kihallgatod őket, mik a terveik.")
         print("2. Visszamész a szobádba.")
         print("Jelenlegi pontszámod:", state.get_score())
         return follow_the_couple(state)
@@ -339,7 +338,7 @@ def first_meeting_talk(state):
     if choice == "1":
         state.update_score(10)
         print("\nMielőtt a vita elfajult volna, a professzor leállított. Otthagyod a professzort és Ronékat és inkább körülnézel a hajón. Észreveszel egy házaspárt. Hogyan tovább?")
-        print("\n1. Utánuk lopódzol és kihallgatod őket, mik a terveik.")
+        print("1. Utánuk lopódzol és kihallgatod őket, mik a terveik.")
         print("2. Visszamész a szobádba.")
         print("Jelenlegi pontszámod:", state.get_score())
         return follow_the_couple(state)
@@ -347,7 +346,7 @@ def first_meeting_talk(state):
         state.update_score(0)
         print("\nRonnak gyanús lett a mézes-mázas viselkedésed. Elbuktál!")
         print("Az elért pontszámod:", state.get_score())
-        return retry_or_exit(state)
+        return retry_or_exit_killer(state)
     else:
         print("Érvénytelen választás. Kérlek, próbáld újra.")
         killer_story(choice)
@@ -366,7 +365,7 @@ def follow_the_couple(state):
         state.update_score(0)
         print("\nNem megy ez neked. Sajnálom, a játék véget ért.")
         print("Az elért pontszámod:", state.get_score())
-        return retry_or_exit(state)
+        return retry_or_exit_killer(state)
     else:
         print("Érvénytelen választás. Kérlek, próbáld újra.")
         killer_story(choice)
@@ -386,7 +385,7 @@ def continue_planning(state):
         state.update_score(0)
         print("\nCsatlakozol egy házaspárhoz??? Nem megy ez neked. Sajnálom, a játék véget ért.")
         print("Az elért pontszámod:", state.get_score())
-        return retry_or_exit(state)
+        return retry_or_exit_killer(state)
     else:
         print("Érvénytelen választás. Kérlek, próbáld újra.")
         killer_story(choice)
@@ -399,7 +398,7 @@ def seaching_new_victim(state):
         state.update_score(0)
         print("\nKomolyan? Ellentmondtál a Moriarty-család fejének? Meghaltál. A játék véget ért.")
         print("Az elért pontszámod:", state.get_score())
-        return retry_or_exit(state)
+        return retry_or_exit_killer(state)
 
     elif choice == "2":
         state.update_score(10)
@@ -458,7 +457,7 @@ def second_murder(state):
         state.update_score(0)
         print("\nAzzal, hogy leléptél csak gyanúsabb lettél. Lebuktál és elkaptak. A játék véget ért.")
         print("Az elért pontszámod:", state.get_score())
-        return retry_or_exit(state)
+        return retry_or_exit_killer(state)
     else:
         print("Érvénytelen választás. Kérlek, próbáld újra.")
         killer_story(choice)
@@ -480,7 +479,7 @@ def third_murder(state):
         state.update_score(0)
         print("\nAzzal, hogy támogattad Ront, magadra terelted a gyanút. Elbuktál. A játék véget ért.")
         print("Az elért pontszámod:", state.get_score())
-        return retry_or_exit(state)
+        return retry_or_exit_killer(state)
     else:
         print("Érvénytelen választás. Kérlek, próbáld újra.")
         killer_story(choice)

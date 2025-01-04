@@ -1,3 +1,5 @@
+import random
+
 # Üdvözlés
 def hamster_welcome():
     input("Üdv a hörcsög tamagotchi játékban! \nA feladatod, hogy gondoskodj egy hörcsögről. Nyomj egy ENTERt, ha kezdhetjük! ")
@@ -18,6 +20,22 @@ def hamster_name():
         print(f"{hamster_name} egy utánozhatatlan Campbell törpe orosz!")
     elif hamster_type == 3:
         print(f"{hamster_name} egy felejthetetlen Szíriai (arany) hörcsög!")
+
+# Véletlenszerűen meghatározott szükségletek
+def hamster_needs():
+    global hamster_name
+    needs = random.choice(["etetés", "ivás", "játék", "alvás"])
+    
+    print(f"\n{hamster_name} most szeretne {needs}-t!")
+    
+    if needs == "etetés":
+        hamster_food()
+    elif needs == "ivás":
+        hamster_drink()
+    elif needs == "játék":
+        hamster_play()
+    elif needs == "alvás":
+        hamster_sleep()
 
 # Etetés
 def hamster_food():

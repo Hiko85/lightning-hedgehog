@@ -267,7 +267,7 @@ def killer_story(state):
     print("Öt év telt el azóta, hogy Ront meggyanúsították a gyilkossággal és kicsapták a nyomozó akadémiáról. Te voltál, aki akkor rákented a gyilkosságot, mint a Moriarty-család informátora hiszen az akadémia diákjaként könnyen ráterhelhetted a gyanút."
           "Most az a feladatod, hogy a hajóúton Milo parancsára gyilkosságokat hajts végre, de ne hagyd, hogy Ron és a társa leleplezzenek téged."
           "A hajón már indulás előtt összefutsz Ronnal és a társával. Mit teszel?")
-    print("1. Úgy teszel, mintha nem ismerném őket.")
+    print("1. Úgy teszel, mintha nem ismernéd őket.")
     print("2. Mivel Fin professzorral vagy együtt, inkább te is szóbaelegyedsz velük.")
 
     choice = input("Választásod: ").strip()

@@ -27,7 +27,7 @@ def hamster_needs():
     else:
         needs = random.choice(["ivás", "alvás"])
 
-    print(f"\n{hamster_name} most szeretne {needs}-t!")
+    print(f"\n{hamster_name} most ezt szeretné csinálni: {needs}")
 
     if needs == "etetés":
         hamster_food()

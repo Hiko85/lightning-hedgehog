@@ -65,8 +65,6 @@ def questioning_examining(state):
     if choice == "1":
         state.update_score(0)
         print("\nMegtagadtátok Milo parancsát, a gyilkosságok tovább folytatódnak. Nem kaptátok el a gyilkost. Vesztettetek. A játék véget ért.")
-        print("1. Újrapróbálod?")
-        print("2. Kilépsz a játékból?")
         return retry_or_exit(state)
     elif choice == "2":
         state.update_score(10)

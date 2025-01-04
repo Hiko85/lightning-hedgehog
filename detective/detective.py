@@ -27,10 +27,12 @@ def detective_main():
         else:
             print("Sajnáljuk, nem sikerült elkapnod a gyilkost.")
     elif role == "killer":
-        if state.get_score() >= 50:
-            print("Gratulálunk! Sikerült megúsznod a bűntényt!")
+        if state.get_score() >= 65 and state.get_score() <= 90:
+            print("Gratulálok! Megúsztad a lebukást! A játék véget ért.")
+        elif state.get_score() >= 115:
+            print("Gratulálok! Lebuktál! Azzal, hogy megmentetted a professzort, felfedted magad, így elkaptak! Sok szerencsét legközelebb. A játék véget ért.")
         else:
-            print("Elkaptak a rendőrök. A bűntett kiderült.")
+            print("Sajnos lebuktál! A játék véget ért.")
 
     new_play = retry_exit()
     if not new_play:
@@ -52,10 +54,12 @@ def detective_main():
         else:
             print("Sajnáljuk, nem sikerült elkapnod a gyilkost.")
     elif new_play == "killer":
-        if state.get_score() >= 50:
-            print("Gratulálunk! Sikerült megúsznod a bűntényt!")
+        if state.get_score() >= 65 and state.get_score() <= 90:
+            print("Gratulálok! Megúsztad a lebukást! A játék véget ért.")
+        elif state.get_score() >= 115:
+            print("Gratulálok! Lebuktál! Azzal, hogy megmentetted a professzort, felfedted magad, így elkaptak! Sok szerencsét legközelebb. A játék véget ért.")
         else:
-            print("Elkaptak a rendőrök. A bűntett kiderült.")
+            print("Sajnos lebuktál! A játék véget ért.")
 
 detective_main()
 input("\nNyomj egy gombot a kilépéshez...")

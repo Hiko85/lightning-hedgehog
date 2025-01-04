@@ -1,6 +1,7 @@
 #Főmodul
 
-from detective.detective_user import *
+#from detective.detective import *
+import detective
 import hamster
 import tic_tac_toe
 
@@ -21,7 +22,7 @@ def main_menu():
             start_hamster_tamagotchi()
         elif choice == "2":
             print("\nNyomozós játék indítása...\n")
-            start_detective_game()
+            start_detective()
         elif choice == "3":
             print("\nAmőba játék indítása...\n")
             start_tic_tac_toe()
@@ -34,9 +35,9 @@ def start_hamster_tamagotchi():
     print("Hamarosan érkezik a Hörcsög Tamagotchi játék!")
     hamster
 
-def start_detective_game():
+def start_detective():
     print("Hamarosan érkezik a Nyomozós játék!")
-    welcome()
+    detective
    
 def start_tic_tac_toe():
     print("Hamarosan érkezik az Amőba játék!")

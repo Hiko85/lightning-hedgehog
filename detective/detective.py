@@ -1,8 +1,7 @@
 #főoldal ami kapcsolatba lépjen a felhasználóval
-
-from detective_user import *
-from detective_state import *
-from detective_logic import *
+from .detective_user import *
+from .detective_state import *
+from .detective_logic import *
 
 def detective_main():
 #a játék fő funkciói.
@@ -61,5 +60,6 @@ def detective_main():
         else:
             print("Sajnos lebuktál! A játék véget ért.")
 
-detective_main()
-input("\nNyomj egy gombot a kilépéshez...")
+if __name__ == "__main__":
+    detective_main()
+    input("\nNyomj egy gombot a kilépéshez...")

@@ -1,4 +1,5 @@
 #főoldal ami kapcsolatba lépjen a felhasználóval
+
 from detective_user import *
 from detective_state import *
 from detective_logic import *
@@ -17,10 +18,12 @@ def detective_main():
     elif role == "killer":
         killer_story(state)
 
-    print("\nA játék véget ért. Az elért pontszámod:", state.get_score())
+    print("\nA játék véget ért. Az elért pontszámod: 90 /", state.get_score())
     if role == "detective":
-        if state.get_score() >= 50:
-            print("Gratulálunk! Sikerült elkapnod a gyilkost!")
+        if state.get_score() == 90:
+            print("Gratulálok a sikeres nyomozáshoz! Megtaláltad a gyilkost és az informátort és fényt derítettél az öt évvel ezelőtti bűntényre.")
+        elif state.get_score() >= 70:
+            print("Jól játszottál, de nem találtad meg az informátort. Sok szerencsét legközelebb. A játék véget ért.")
         else:
             print("Sajnáljuk, nem sikerült elkapnod a gyilkost.")
     elif role == "killer":
@@ -29,4 +32,30 @@ def detective_main():
         else:
             print("Elkaptak a rendőrök. A bűntett kiderült.")
 
+    new_play = retry_exit()
+    if not new_play:
+        return
+
+    state = GameState()
+
+    if new_play == "detective":
+        detective_story(state)
+    elif new_play == "killer":
+        killer_story(state)
+
+    print("\nA játék véget ért. Az elért pontszámod: 90 /", state.get_score())
+    if new_play == "detective":
+        if state.get_score() == 90:
+            print("Gratulálok a sikeres nyomozáshoz! Megtaláltad a gyilkost és az informátort és fényt derítettél az öt évvel ezelőtti bűntényre.")
+        elif state.get_score() >= 70:
+            print("Jól játszottál, de nem találtad meg az informátort. Sok szerencsét legközelebb. A játék véget ért.")
+        else:
+            print("Sajnáljuk, nem sikerült elkapnod a gyilkost.")
+    elif new_play == "killer":
+        if state.get_score() >= 50:
+            print("Gratulálunk! Sikerült megúsznod a bűntényt!")
+        else:
+            print("Elkaptak a rendőrök. A bűntett kiderült.")
+
 detective_main()
+input("\nNyomj egy gombot a kilépéshez...")

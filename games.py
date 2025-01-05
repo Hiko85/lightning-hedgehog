@@ -1,7 +1,8 @@
 #Főmodul
 
 from detective.detective import detective_main
-import hamster
+from hamster.hamster import hamster_start
+from hamster.hamster_logic import *
 import tic_tac_toe
 
 def main_menu():
@@ -32,7 +33,7 @@ def main_menu():
 
 def start_hamster_tamagotchi():
     print("Hamarosan érkezik a Hörcsög Tamagotchi játék!")
-    hamster
+    hamster_start()
 
 def start_detective():
     print("Hamarosan érkezik a Nyomozós játék!")

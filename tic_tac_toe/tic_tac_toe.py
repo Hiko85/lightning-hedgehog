@@ -6,7 +6,7 @@ from tic_tac_toe_state import initialize_game_state, print_board
 
 def main():
     welcome()
-
+    scores = {'X': 0, 'O': 0}  # Pontszámok tárolása
     choice = ""
     while choice != "2":
         print("1. Játék indítás")
@@ -16,7 +16,7 @@ def main():
 
         if choice == "1":
             print("\nIndul a játék!\n")
-            starting()
+            starting(scores)  # bejönnek scores itt
         if choice == "2":
             print("\nKöszönjük!\n")
 

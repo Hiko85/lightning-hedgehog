@@ -5,7 +5,9 @@ from tic_tac_toe_user import *
 def starting(scores):
     # Inicializáljuk a játék állapotát
     board, current_player = initialize_game_state()
-    while not is_board_full(board):
+    winner = None  # Inicializáljuk a győztes változót
+
+    while not is_board_full(board) and winner is None:  # Ellenőrizzük a győztest is
         print_board(board)  # Tábla megjelenítése
 
         move = get_player_move(current_player)  # Kéri a játékostól a lépést
@@ -15,8 +17,9 @@ def starting(scores):
             board[move] = current_player  # current player odalép
             winner = check_winner(board)  # Ellenőrizzük a győztest
 
-            # Váltás a következő játékosra
-            current_player = 'O' if current_player == 'X' else 'X'
+            # Váltás a következő játékosra, ha nincs győztes
+            if winner is None:
+                current_player = 'O' if current_player == 'X' else 'X'
         else:
             print("Ez a mező már foglalt. Próbálj újra.")  # Ha a mező foglalt
 
@@ -29,7 +32,7 @@ def starting(scores):
     else:
         display_draw()  # Megjeleníti a döntetlen üzenetet
 
- # Pontszámok megjelenítése
+    # Pontszámok megjelenítése
     print(f"Pontszámok: X: {scores['X']}, O: {scores['O']}")
 
 
@@ -37,7 +40,7 @@ def check_winner(board):
     win_conditions = [
         [0, 1, 2], [3, 4, 5], [6, 7, 8],  # Sorok
         [0, 3, 6], [1, 4, 7], [2, 5, 8],  # Oszlopok
-        [0, 4, 8], [2, 5, 6]              # Átlók
+        [0, 4, 8], [2, 4, 6]              # Átlók
     ]
     for condition in win_conditions:
         if board[condition[0]] == board[condition[1]] == board[condition[2]] != ' ':

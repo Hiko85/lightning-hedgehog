@@ -2,11 +2,12 @@ from tic_tac_toe_state import initialize_game_state, print_board
 from tic_tac_toe_user import *
 
 
-def starting():
+def starting(scores):
     # Inicializáljuk a játék állapotát
     board, current_player = initialize_game_state()
     while not is_board_full(board):
         print_board(board)  # Tábla megjelenítése
+
         move = get_player_move(current_player)  # Kéri a játékostól a lépést
 
         # Ellenőrizzük, hogy a mező szabad-e
@@ -24,8 +25,12 @@ def starting():
 
     if winner:
         display_winner(winner)  # Megjeleníti győztes üzenetet
+        scores[winner] += 1  # Frissítjük a győztes pontszámát
     else:
         display_draw()  # Megjeleníti a döntetlen üzenetet
+
+ # Pontszámok megjelenítése
+    print(f"Pontszámok: X: {scores['X']}, O: {scores['O']}")
 
 
 def check_winner(board):

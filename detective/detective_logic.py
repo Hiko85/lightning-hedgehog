@@ -8,26 +8,26 @@ def detective_story():
     print("1. Elfogadjátok a meghívást és elmentek a hajóútra.")
     print("2. Nem érdekelnek a Moriarty-k, otthon maradtok.")
 
-    choice = input("Választásod: ").strip()
+    choice = input("Választásod: ").strip() # a felhasználó döntése, amely meghatározza a történet folytatását. És eltávolítja a felesleges szóközöket.
 
     if choice == "1":
-        update_score(10) #hozzáadja a pontszámot a meglévőhöz.
+        update_score(10) # hozzáadja a megadott pontszámot a meglévőhöz.
         print("\nA hajón összefutottok négy ismerőssel: a zártszobás gyilkosságok szakértőjével (Fin tanárnő), egy orvossal (Dr. Hirsch), illetve Ron két volt diáktársával"
               " (Shachival és Elmerrel). Mindegyikük gyanús indokkal van a hajón, ám újabb üzenetet kaptok Milótól, miszerint aznap este éjfélkor a bárban olyan információhoz"
               " juthattak, ami az igazi gyilkos nyomára vezethet. Elmentek a bárba, ahol az egyik vendég éjfélkor hirtelen életét veszti. Dr. Hirsch, aki szintén az akadémia"
                " tanára, ugyancsak a bárban van, és megtiltja, hogy bárki is elhagyja a bárt. Mit tesztek?")
         print("1. Megvizsgáljátok a holttestet.")
         print("2. Kikérdezitek a jelenlévőket.")
-        print("Jelenlegi pontszámod:", get_score()) #kiírja az aktuális pontszámot
-        return bar_murder()
+        print("Jelenlegi pontszámod:", get_score()) # kiírja az aktuális pontszámot
+        return bar_murder() # átlépünk a következő részre
     elif choice == "2":
         update_score(0)
         print("\nA választásod alapján sosem tudjátok meg ki az igazi gyilkos. A nyomozás sikertelen volt. Elbuktál.")
-        print("Az elért pontszámod:", get_score())
-        return retry_or_exit_detective()
+        print("Az elért pontszámod:", get_score()) # kiírja az aktuális pontszámot
+        return retry_or_exit_detective() #lehetőség az újrakezdésre, kilépésre
     else:
         print("Érvénytelen választás. Kérlek, próbáld újra.")
-        detective_story(choice)
+        detective_story(choice) # újra meghívja a függvényt, ha a felhasználó érvénytelen választ adott.
 
 
 def retry_or_exit_detective():
@@ -37,11 +37,11 @@ def retry_or_exit_detective():
     choice = input("Választásod: ").strip()
 
     if choice == "1":
-        reset_score()  # Reset score
-        detective_story()
+        reset_score()  # visszaállítja a pontszámot
+        detective_story() # újraindítja a nyomozó történetet
     elif choice == "2":
-        reset_score()  # Reset score
-        killer_story()
+        reset_score()  # visszaállítja a pontszámot
+        killer_story() #újraindítja a gyilkos történetet
     elif choice == "3":
         print("Köszönjük, hogy játszottál! Viszlát!")
     else:
@@ -300,10 +300,10 @@ def retry_or_exit_killer():
     choice = input("Választásod: ").strip()
 
     if choice == "1":
-        reset_score()  # Reset score
+        reset_score()
         detective_story()
     elif choice == "2":
-        reset_score()  # Reset score
+        reset_score()
         killer_story()
     elif choice == "3":
         print("Köszönjük, hogy játszottál! Viszlát!")

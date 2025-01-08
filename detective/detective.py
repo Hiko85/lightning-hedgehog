@@ -60,7 +60,3 @@ def detective_main():
             print("Gratulálok! Lebuktál! Azzal, hogy megmentetted a professzort, felfedted magad, így elkaptak! Sok szerencsét legközelebb. A játék véget ért.")
         else:
             print("Sajnos lebuktál! A játék véget ért.")
-
-if __name__ == "__main__":
-    detective_main()
-    input("\nNyomj egy gombot a kilépéshez...")

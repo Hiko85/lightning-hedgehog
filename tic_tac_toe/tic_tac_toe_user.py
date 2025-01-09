@@ -1,10 +1,10 @@
 
-def print_board(board):
+"""def print_board(board):
     # Játék tábla megjelenítése.
     for i in range(3):
         print(' | '.join(board[i*3:(i+1)*3]))
         if i < 2:
-            print('-----')
+            print('-----')"""
 
 
 def welcome():

@@ -7,7 +7,8 @@ def starting(scores):
     board, current_player = initialize_game_state()
     winner = None  # Inicializáljuk a győztes változót
 
-    while not is_board_full(board) and winner is None:  # Ellenőrizzük a győztest is
+    # Ellenőrizzük tele van e tábla éa a győztest is
+    while not is_board_full(board) and winner is None:
         print_board(board)  # Tábla megjelenítése
 
         move = get_player_move(current_player)  # Kéri a játékostól a lépést
@@ -36,7 +37,7 @@ def starting(scores):
     print(f"Pontszámok: X: {scores['X']}, O: {scores['O']}")
 
 
-def check_winner(board):
+def check_winner(board):  # van e nyertes
     win_conditions = [
         [0, 1, 2], [3, 4, 5], [6, 7, 8],  # Sorok
         [0, 3, 6], [1, 4, 7], [2, 5, 8],  # Oszlopok
@@ -46,6 +47,9 @@ def check_winner(board):
         if board[condition[0]] == board[condition[1]] == board[condition[2]] != ' ':
             return board[condition[0]]
     return None
+
+# függvény megvizsgálja, hogy a táblában nincs-e szóköz (' '), ami az üres mezőtképezi.
+# board változó, egy lista ami a játék mezőit tartalmazza. = játék tábla reprezentációja
 
 
 def is_board_full(board):

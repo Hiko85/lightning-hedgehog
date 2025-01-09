@@ -30,9 +30,8 @@ ________________________________________
 A program több modulból áll, mindegyik modul külön fájlban található. A modulok célja a funkcionalitás és a játéklogika elkülönítése.
 - **games.py:** <br>Ez a főfájl, amely a főmenüt és az alapvető vezérlési logikát tartalmazza. Meghívja a megfelelő modulokat az egyes játékok futtatására.
 ---
-- **hamster_user.py:** <br>Bekéri a játékostól, hogy mit szeretne adni a hörcsögnek.
-- **hamster_logic.py:** <br>A Hörcsög játékkal kapcsolatos logikát tartalmazza. Ez a modul kezeli a játék logikai folyamatát, és a hörcsög_jatek_allapot.py modulban tárolt állapotokat frissíti.
-- **hamster_state.py:** <br>A Hörcsög aktuális állapotát adja vissza.
+- **hamster.py:** <br>Ez tartalmazza a hivatkozásaokat, amelyek a "hamster_logic"-ból hívja meg a függvényeket.
+- **hamster_logic.py:** <br>A Hörcsög játékkal kapcsolatos logikát tartalmazza. Ez a modul kezeli a játék teljes logikai folyamatát.
 ---
 - **detective_user.py:** <br>Bekéri a játékostól a választásait.
 - **detective_logic.py:** <br>A játék logikáját kezeli, és az állapotot detective_state.py fájlban frissíti. A nyomozónak és a gyilkosnak kiosztja, hogy kapott-e vagy veszített pontot.

@@ -39,9 +39,10 @@ A program több modulból áll, mindegyik modul külön fájlban található. A 
 - **detective_state.py:** <br>A nyomozó és a gyilkos állapota, a pontokot számolja vagy újrakezdés esetén visszaállítja. A kalandjáték változóit tartalmazza.
 - **detective.py:** <br>a fő program, ami meghatározza a játék menetét és a játékos választásai alapján kezeli a logikát.
 ---
+- **tic_tac_toe.py:** <br>Elindítja a játékot def main_menu.
 - **tic_tac_toe_user.py:** <br>Bekéri az aktuális játékostól a következő lépést.
 - **tic_tac_toe_logic.py:** <br>Az Amőba játék szabályait és logikáját kezeli. Ellenőrzi, hogy nyert-e valamelyik játékos és hogy tele van-e a tábla. 
-- **tic_tac_toe_state.py:** <br>Ez a modul a játék állapotát kezeli, például a tábla megjelenítése. Az Amőba mezőinek állapotát tárolja.
+- **tic_tac_toe_state.py:** <br>Ez a modul a játék állapotát kezeli. inicializálja a játék allapotát és megjelínit a táblát. Az Amőba mezőinek állapotát tárolja.
 ________________________________________
 Funkció
      Hörcsög, Amőba, Nyomozó:

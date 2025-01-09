@@ -1,5 +1,5 @@
 def initialize_game_state():
-    # Inicializálja a játék állapotát.
+    # Inicializálja a játék állapotát.(beállítjuk a játék elején szükséges kezdőértékeket.)
     board = [' '] * 9  # 3x3 tábla, 9 üres mezővel
     current_player = 'X'  # Kezdő játékost megadjuk
     return board, current_player  # Visszatér a board és kezdő játékos értékével

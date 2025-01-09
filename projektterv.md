@@ -93,7 +93,7 @@ ________________________________________
 4.	A *_state.py modulok tárolják az aktuális játék változóit.
 - Ez biztosítja, hogy minden állapot jól elkülönített legyen.
 
-Felhasználói felület modul: Ez a *_user.py, amely kezeli a játékos interakcióit és a játékok közötti navigációt. Itt történik a menü és a játékos döntéseinek megjelenítése.
-Játék logika modul: Ez tartalmazza a játékmenet működését (szabályok, döntések, események). Minden játéknak külön fájlban kell lennie, például: hamster_logic.py, detective_logic.py, tic_tac_toe_logic.py.
+Felhasználói felület modul: Ez a *_user.py, amely kezeli a játékos interakcióit és a játékok közötti navigációt. Itt történik a menü és a játékos döntéseinek megjelenítése.<br>
+Játék logika modul: Ez tartalmazza a játékmenet működését (szabályok, döntések, események). Minden játéknak külön fájlban kell lennie, például: hamster_logic.py, detective_logic.py, tic_tac_toe_logic.py.<br>
 Játék állapot modul: Ez kezeli az adott játék változóit és állapotát. Itt tároljuk például a hörcsög hidratáltságát, a játékos pontszámát, vagy az Amőba mezőinek állapotát. Minden játékhoz egy külön modulban tároljuk az állapotot, például: hamster_state.py, detective_state.py, tic_tac_toe_state.py.
 
